@@ -122,4 +122,4 @@ curl "http://localhost:5000/api/search?q=AI"
 
 ## Resume
 
-[Link to Resume](<INSERT_RESUME_LINK_HERE>)
+[Link to Resume](https://drive.google.com/file/d/14E0FlbPJW0wF3WJksvUtd4ui-dH1yATg/view?usp=sharing)
