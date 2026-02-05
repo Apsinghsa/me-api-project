@@ -1,42 +1,169 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 0;
+    color: #1a1a1a;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #4a5568;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #1a1a1a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.card {
-  padding: 2em;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.read-the-docs {
-  color: #888;
+.error {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: none;
+    text-align: center;
+}
+
+.error h2 {
+    color: #e53e3e;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.retry-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.retry-btn:hover {
+    background: #333;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-section h2 {
+    color: #1a1a1a;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.education-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
+}
+
+.education-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.education-card .degree {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.education-card .institution {
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.education-card .cgpa {
+    font-size: 0.95rem;
+    color: #718096;
+}
+
+.projects-section {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    color: #1a1a1a;
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.footer {
+    border-top: 1px solid #e2e8f0;
+    background: transparent;
+    color: #718096;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-section h2,
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .education-card {
+        padding: 1.5rem;
+    }
 }
