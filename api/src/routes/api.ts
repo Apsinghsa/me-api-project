@@ -1,11 +1,11 @@
 import { Router, Request, Response } from 'express';
 import Candidate from '../models/Candidate';
-import { IProjectQuery, ISearchQuery, ISearchResult, IProject } from '../types';
+import { IProjectQuery, ISearchResult, IProject } from '../types';
 
 const router = Router();
 
 // GET /api/profile - Get full profile
-router.get('/profile', async (req: Request, res: Response): Promise<void> => {
+router.get('/profile', async (_req: Request, res: Response): Promise<void> => {
   try {
     const profile = await Candidate.findOne();
 
@@ -120,7 +120,7 @@ router.get('/projects', async (req: Request, res: Response): Promise<void> => {
 // GET /api/search - Simple text search
 router.get('/search', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { q } = req.query as ISearchQuery;
+    const q = req.query.q as string;
 
     if (!q) {
       res.status(400).json({

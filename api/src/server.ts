@@ -22,14 +22,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // Request logging middleware (development)
 if (process.env.NODE_ENV === "development") {
-  app.use((req: Request, res: Response, next: NextFunction) => {
+  app.use((req: Request, _res: Response, next: NextFunction) => {
     console.log(`${req.method} ${req.path}`);
     next();
   });
 }
 
 // Health check endpoint (CRITICAL)
-app.get("/health", (req: Request, res: Response): void => {
+app.get("/health", (_req: Request, res: Response): void => {
   res.status(200).json({
     status: "OK",
     message: "Server is running",
@@ -41,7 +41,7 @@ app.get("/health", (req: Request, res: Response): void => {
 app.use("/api", apiRoutes);
 
 // Root endpoint
-app.get("/", (req: Request, res: Response): void => {
+app.get("/", (_req: Request, res: Response): void => {
   res.json({
     message: "Resume API Playground - TypeScript Edition",
     version: "2.0.0",
@@ -65,7 +65,7 @@ app.use((req: Request, res: Response): void => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction): void => {
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction): void => {
   console.error("Error:", err.stack);
   res.status(500).json({
     success: false,
